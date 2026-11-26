@@ -1,24 +1,63 @@
+
 [build-system]
 requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "onsetkit"
-version = "0.2.0"
-description = "Event-onset labels, optimal stratified sampling and temporal validation"
+version = "0.2.1"
+description = "Statistical toolkit for rare-event forecasting, optimal stratified sampling and temporal validation"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
 dependencies = ["numpy>=1.24"]
+
 authors = [{name = "Jaskaran Singh"}]
 maintainers = [{name = "Jaskaran Singh"}]
-keywords = ["rare-events", "time-series", "regime-shifts", "stratified-sampling", "quantitative-finance"]
-classifiers = ["Development Status :: 3 - Alpha", "Intended Audience :: Science/Research", "Programming Language :: Python :: 3", "Topic :: Scientific/Engineering"]
+
+keywords = [
+    "rare-events",
+    "time-series",
+    "regime-shifts",
+    "stratified-sampling",
+    "quantitative-finance",
+    "forecasting",
+    "statistics",
+    "risk-management",
+    "machine-learning",
+    "predictive-maintenance",
+    "variance-estimation",
+    "temporal-validation",
+    "volatility",
+    "optimization",
+    "econometrics"
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
 
 [project.urls]
+Homepage = "https://github.com/jaskaran04/onsetkit"
 Repository = "https://github.com/jaskaran04/onsetkit"
+Documentation = "https://github.com/jaskaran04/onsetkit#readme"
 Issues = "https://github.com/jaskaran04/onsetkit/issues"
+Changelog = "https://github.com/jaskaran04/onsetkit/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = ["pytest>=7", "build", "twine"]
