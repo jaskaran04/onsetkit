@@ -1,5 +1,12 @@
 # OnsetKit
 
+[![PyPI](https://img.shields.io/pypi/v/onsetkit)](https://pypi.org/project/onsetkit/)
+[![CI](https://github.com/jaskaran04/onsetkit/actions/workflows/ci.yml/badge.svg)](https://github.com/jaskaran04/onsetkit/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://pypi.org/project/onsetkit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-alpha-orange)](https://pypi.org/project/onsetkit/)
+[![Downloads](https://img.shields.io/pypi/dm/onsetkit)](https://pypi.org/project/onsetkit/)
+
 **Construct, sample and validate rare-event forecasting datasets.**
 
 OnsetKit is a NumPy-only toolkit for forward-looking event labels, finite-population stratified sampling and chronological validation. Applications include market volatility-regime transitions, liquidity shocks, equipment failures and operational incidents. It is experimental alpha software; it does not itself detect regimes or fit a forecasting model.
@@ -15,7 +22,13 @@ python examples/regime_demo.py
 python examples/panel_demo.py
 ```
 
-Public PyPI publication is pending.
+## Installation
+
+```bash
+pip install onsetkit
+```
+
+Requires Python 3.10+ and NumPy.
 
 ## Quick start
 
