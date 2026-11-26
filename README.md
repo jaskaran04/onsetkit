@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/onsetkit)](https://pypi.org/project/onsetkit/)
 [![CI](https://github.com/jaskaran04/onsetkit/actions/workflows/ci.yml/badge.svg)](https://github.com/jaskaran04/onsetkit/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://pypi.org/project/onsetkit/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/jaskaran04/onsetkit/blob/main/LICENSE)
 [![Status](https://img.shields.io/badge/status-alpha-orange)](https://pypi.org/project/onsetkit/)
 [![Downloads](https://img.shields.io/pypi/dm/onsetkit)](https://pypi.org/project/onsetkit/)
 
@@ -11,24 +11,41 @@
 
 OnsetKit is a NumPy-only toolkit for forward-looking event labels, finite-population stratified sampling and chronological validation. Applications include market volatility-regime transitions, liquidity shocks, equipment failures and operational incidents. It is experimental alpha software; it does not itself detect regimes or fit a forecasting model.
 
-## Install locally
-
-Python 3.10+ is required. From the repository root:
-
-```sh
-python -m pip install -e ".[dev]"
-python -m pytest -q
-python examples/regime_demo.py
-python examples/panel_demo.py
-```
-
 ## Installation
+
+OnsetKit is available on the official Python Package Index (PyPI).
 
 ```bash
 pip install onsetkit
 ```
 
-Requires Python 3.10+ and NumPy.
+### Requirements
+
+- Python 3.10 or later
+- NumPy >= 1.24
+
+### Project links
+
+- [PyPI](https://pypi.org/project/onsetkit/)
+- [GitHub](https://github.com/jaskaran04/onsetkit)
+- [Documentation](https://github.com/jaskaran04/onsetkit#readme)
+- [Issue tracker](https://github.com/jaskaran04/onsetkit/issues)
+
+### Development installation
+
+```bash
+git clone https://github.com/jaskaran04/onsetkit.git
+cd onsetkit
+python -m pip install -e ".[dev]"
+python -m pytest -v
+```
+
+Run the demonstrations from the repository root:
+
+```bash
+python examples/regime_demo.py
+python examples/panel_demo.py
+```
 
 ## Quick start
 
@@ -119,10 +136,30 @@ Run `python examples/panel_demo.py` for a shuffled multi-asset synthetic example
 - No real-market or industrial performance benchmarks yet.
 - NumPy arrays are mutable even inside frozen result dataclasses; treat them as read-only.
 
+### Known numerical limitations
+
+- Mixed integer and floating-point timestamp comparisons may lose precision for large integer timestamps. Use consistent timestamp dtypes, including split cutoffs.
+- Extreme numerical scales may cause underflow in allocation calculations or intermediate overflow in weighted mean and variance estimation, even when the final result is representable.
+- Complex-valued inputs are not supported; use appropriately scaled, real-valued inputs. Some complex inputs may currently be cast to real values instead of being rejected.
+- Extremely large forecasting horizons may raise an overflow exception.
+
+These are known limitations of the current implementation, not corrected defects in this documentation release.
+
 ## Roadmap
 
 Explicit information availability timestamps, elapsed-time horizons, aggregate panel event metrics, calibration utilities, uncertainty intervals, and reproducible real-world financial and industrial benchmarks.
 
 ## Contributing
 
-Bug reports, reproducible examples and regression tests are welcome. MIT licence; review copyright attribution and research provenance before publication.
+Bug reports, reproducible examples and regression tests are welcome. Please open an [issue](https://github.com/jaskaran04/onsetkit/issues) or submit a pull request. Changes to existing functionality should include regression tests. For release instructions, see [RELEASING.md](https://github.com/jaskaran04/onsetkit/blob/main/RELEASING.md).
+
+## Author and maintainer
+
+**Jaskaran Singh**
+
+- [GitHub](https://github.com/jaskaran04)
+- [PyPI project](https://pypi.org/project/onsetkit/)
+
+## Licence
+
+OnsetKit is distributed under the MIT License. See [LICENSE](https://github.com/jaskaran04/onsetkit/blob/main/LICENSE) for details.
